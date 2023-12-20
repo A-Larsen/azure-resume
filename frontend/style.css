@@ -29,6 +29,7 @@ p, ul {
 
 
 h1 {
+    grid-area:header;
     background-color: var(--blue);
     text-align: center;
 }
@@ -41,16 +42,12 @@ h2, h3, h4 {
     color: var(--aqua);
 }
 
-
 #top {
     grid-area:top;
+    width: 100%;
 }
 
-h1 {
-    width: 50%;
-}
 #links {
-    margin-left: 5%;
     margin-top: 3%;
     white-space: nowrap;
 }
@@ -59,11 +56,7 @@ a {
     color: var(--blue);
 }
 
-#personal-info {
-    margin-left: 17%;
-}
-
-#personal-info img {
+#certifications img {
     width: 100px;
     height: 100px;
 }
@@ -71,7 +64,6 @@ a {
 #links img {
     width: 30px;
     height: 30px;
-
 }
 
 #personal-info p {
@@ -79,17 +71,18 @@ a {
     white-space: nowrap;
 }
 
-h1, #links, #personal-info {
+h1, #links, #personal-info, #certifications {
     float: left;
+    margin-right: 3%;
 }
 
 #links a {
-    margin-right: 30%;
     text-decoration: none;
 }
 
 #left-content {
    grid-area: left;
+   clear: left;
 }
 
 #right-content {
@@ -98,8 +91,8 @@ h1, #links, #personal-info {
 
 #grid{
     display: grid;
-    grid-template-areas: "top top"
-                         "left right";
+    grid-template-areas: "header header top"
+                         "left left right";
     padding: 2%;
     max-width: 850px;
     background-color: var(--bg);
@@ -138,9 +131,6 @@ canvas {
     z-index: -1;
 }
 
-img {
-    /* display: none; */
-}
 
 @media only screen and (max-width: 1090px) {
     #grid {
@@ -155,24 +145,51 @@ img {
     }
     #links, #personal-info {
         margin-left: 2%;
-        font-size: 2.5em;
+        font-size: 1.5em;
     }
 
     #personal-info {
-        margin-left: 10%;
+        margin-left: 30%;
     }
 
     #left-content li {
         margin-bottom: 2%;
     }
+    #grid{
+        grid-template-areas: "header header"
+                             "top    top"
+                             "left right";
+    }
+    #links a {
+        margin-right: 10%;
+    }
+    h1, #links, #personal-info, #certifications {
+        float: none;
+    }
+    #links, #certifications {
+        float: left;
+    }
+    #top {
+        margin: auto;
+        width: 50%;
+    }
 }
 
-@media only screen and (max-width: 940px) {
+@media only screen and (max-width: 900px) {
     h2 {
         max-width: 60%;
     }
     #links, #personal-info {
-        font-size: 4em;
+        font-size: 2em;
+    }
+    #top {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #top {
+        width: 100%;
     }
 }
 
@@ -188,9 +205,6 @@ img {
         margin-right: 5%;
     }
 
-    #links, #personal-info {
-        /* margin-left: 34%; */
-    }
 
     #grid{
         display: block;
