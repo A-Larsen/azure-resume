@@ -28,7 +28,19 @@ fetch("https://austinsresumefunction.azurewebsites.net/api/httpexample", {
 
 == Backend
 
-The Backend is just an Azure Function that uses an Azure Cosmos DB output binding.
-The asynchronous function `HttpResponseMessage` has some important parameters
+The Backend is just an Azure Function that uses Azure Cosmos DB output bindings
+following the In-process model. The asynchronous function `HttpResponseMessage`
+has some important parameters
 
 === `req` HttpResponseMessage parameter
+
+[source, cs]
+----
+[HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+----
+
+This is used to respond to a webhook sent by a "get", or "post" requests. It
+uses anonymous authorization level meaning that no API key is required to
+invokie the function.
+
+=== `counter` HttpResponseMessage parameter
