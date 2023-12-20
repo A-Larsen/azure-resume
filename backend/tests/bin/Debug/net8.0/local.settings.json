@@ -1,0 +1,16 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=austinsresumefunction;AccountKey=UKna+REcS/yrdTmQG1L8egf/ayNRy7LFvkSd2GcmQmHMWNxJ2l2LjhyX9/oXNoJ0uvPB4dDG+71i+ASt+6XLmA==;EndpointSuffix=core.windows.net",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "FUNCTIONS_EXTENSION_VERSION": "~4",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=austinsresumefunction;AccountKey=UKna+REcS/yrdTmQG1L8egf/ayNRy7LFvkSd2GcmQmHMWNxJ2l2LjhyX9/oXNoJ0uvPB4dDG+71i+ASt+6XLmA==;EndpointSuffix=core.windows.net",
+    "WEBSITE_CONTENTSHARE": "austinsresumefunction4715c2",
+    "WEBSITE_RUN_FROM_PACKAGE": "1",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "f5b58ec6-68e5-4059-8016-39e13c20a192",
+    "CosmosDbConnectionString": "AccountEndpoint=https://austins-resume-database.documents.azure.com:443/;AccountKey=x9QY0g0OfvthSswljr35PvCYN5Z4vux0MKEPRn37aaGJRbEIa5tcKnWK05tpf58l3lkoVTmb3E2BACDbzlH6FA=="
+  },
+  "Host": {
+    "CORS": "*"
+  }
+}

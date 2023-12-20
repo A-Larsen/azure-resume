@@ -1,0 +1,187 @@
+:root {
+    --bg: #282828;
+    --red: #cc241d;
+    --green: #98971a;
+    --blue: #458588;
+    --aqua: #689d6a;
+    --fg: #ebdbb2;
+    --grey: #a89984;
+    --yellow: #fabd2f;
+    --white: #d5c4a1;
+}
+
+* {
+    color: var(--fg);
+}
+
+html {
+    background-color: black;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+p, ul {
+    margin: 10px 2% 10px;
+}
+
+
+h1 {
+    background-color: var(--blue);
+    text-align: center;
+}
+
+h1, h2, h3, h4 {
+    padding-left: 2%;
+}
+
+h2, h3, h4 {
+    color: var(--aqua);
+}
+
+
+#top {
+    grid-area:top;
+}
+
+h1 {
+    width: 50%;
+}
+#links {
+    margin-left: 5%;
+    margin-top: 3%;
+    white-space: nowrap;
+}
+
+a {
+    color: var(--blue);
+}
+
+#personal-info {
+    margin-left: 8%;
+}
+
+#personal-info p {
+    color: var(--green);
+}
+
+h1, #links, #personal-info {
+    float: left;
+}
+
+#links a {
+    margin-right: 5%;
+}
+
+#left-content {
+   grid-area: left;
+}
+
+#right-content {
+    grid-area: right;
+}
+
+#grid{
+    display: grid;
+    grid-template-areas: "top top"
+                         "left right";
+    padding: 2%;
+    max-width: 850px;
+    background-color: var(--bg);
+    margin: 2% auto;
+    padding-bottom: 10px;
+    border: solid;
+    z-index: 0;
+    opacity: 90%;
+
+}
+
+#counter {
+    margin-top: 2%;
+    text-align: center;
+}
+
+
+#counter h2 {
+    max-width: 100%;
+    color: var(--blue);
+    font-size: 2em;
+}
+
+#counter p {
+    color: var(--white);
+    text-align: center;
+    font-size: 2em;
+    padding-left: 2%;
+}
+
+canvas {
+    top: 0;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+img {
+    display: none;
+}
+
+@media only screen and (max-width: 1090px) {
+    #grid {
+        max-width: 80%;
+    }
+    body {
+        font-size: .8em;
+    }
+    h1 {
+        font-size: 5em;
+        width: 100%;
+    }
+    #links, #personal-info {
+        margin-left: 2%;
+        font-size: 2.5em;
+    }
+
+    #personal-info {
+        margin-left: 10%;
+    }
+
+    #left-content li {
+        margin-bottom: 2%;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    h2 {
+        max-width: 60%;
+    }
+    #links, #personal-info {
+        font-size: 4em;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        width: 98%;
+    }
+    #personal-info {
+        padding-left: 2%;
+    }
+
+    #links a {
+        margin-right: 5%;
+    }
+
+    #links, #personal-info {
+        /* margin-left: 34%; */
+    }
+
+    #grid{
+        display: block;
+        max-width: 80%;
+        z-index: 0;
+    }
+}
