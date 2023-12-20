@@ -141,15 +141,14 @@ canvas {
     }
     h1 {
         font-size: 5em;
-        width: 100%;
+        width: 98%;
     }
-    #links, #personal-info {
-        margin-left: 2%;
-        font-size: 1.5em;
+    #personal-info {
+        font-size: 2.5em;
     }
 
     #personal-info {
-        margin-left: 30%;
+        /* margin-left: 30%; */
     }
 
     #left-content li {
@@ -161,17 +160,21 @@ canvas {
                              "left right";
     }
     #links a {
-        margin-right: 10%;
+        /* margin-right: 10%; */
     }
     h1, #links, #personal-info, #certifications {
         float: none;
     }
-    #links, #certifications {
+    #links {
         float: left;
     }
     #top {
         margin: auto;
-        width: 50%;
+        width: 33%;
+    }
+    #links img {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -183,13 +186,13 @@ canvas {
         font-size: 2em;
     }
     #top {
-        width: 80%;
+        /* width: 50%; */
     }
 }
 
 @media only screen and (max-width: 600px) {
     #top {
-        width: 100%;
+        /* width: 100%; */
     }
 }
 
