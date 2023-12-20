@@ -60,11 +60,23 @@ a {
 }
 
 #personal-info {
-    margin-left: 8%;
+    margin-left: 17%;
+}
+
+#personal-info img {
+    width: 100px;
+    height: 100px;
+}
+
+#links img {
+    width: 30px;
+    height: 30px;
+
 }
 
 #personal-info p {
     color: var(--green);
+    white-space: nowrap;
 }
 
 h1, #links, #personal-info {
@@ -72,7 +84,8 @@ h1, #links, #personal-info {
 }
 
 #links a {
-    margin-right: 5%;
+    margin-right: 30%;
+    text-decoration: none;
 }
 
 #left-content {
@@ -126,7 +139,7 @@ canvas {
 }
 
 img {
-    display: none;
+    /* display: none; */
 }
 
 @media only screen and (max-width: 1090px) {

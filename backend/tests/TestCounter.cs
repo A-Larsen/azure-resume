@@ -15,13 +15,12 @@ namespace tests
     {
 
         [Fact]
-
-            public async void Http_trigger_should_return_known_string()
-            {
-                var counter = new My.Functions.Counter();
-                counter.Id = "index";
-                counter.Count = 2;
-                Assert.Equal(2, counter.Count);
-            }
+        public async void Http_trigger_should_return_known_string()
+        {
+            var counter = new My.Functions.Counter();
+            counter.Id = "index";
+            counter.Count = 2;
+            Assert.Equal(counter.Count, 2);
+        }
     }
 }
