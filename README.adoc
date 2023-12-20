@@ -1,1 +1,34 @@
-== Azure Resume
+= Azure Resume
+
+== Frontend
+Created some simple html and css for the visuals. The _script.js_ file is
+sending a request to an Azure function and that Azure Function returns the
+number of users that have accessed the webpage from cosmosdb.
+
+[source, javascript]
+----
+// get counter paragraph element from dom
+const doc_visitor_count = document.querySelector("#counter p");
+
+// send a post request to Azure Function
+fetch("https://austinsresumefunction.azurewebsites.net/api/httpexample", {
+    method: "POST",
+    headers: {
+        "Accept": "application/json",
+    }
+}).then(
+    // Get response and parse JSON data
+    res => res.json()
+).then(data => {
+    // change html element's content to the `count` property of the response
+    // data
+    doc_visitor_count.innerHTML = data.count.toString()
+})
+----
+
+== Backend
+
+The Backend is just an Azure Function that uses an Azure Cosmos DB output binding.
+The asynchronous function `HttpResponseMessage` has some important parameters
+
+=== `req` HttpResponseMessage parameter
