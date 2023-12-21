@@ -1,6 +1,8 @@
 // get counter paragraph element from dom
 const doc_visitor_count = document.querySelector("#counter p");
 
+// document.cookie = "nyquistdev_veiwed=true";
+
 // send a post request to Azure Function
 fetch("https://austinsresumefunction.azurewebsites.net/api/httpexample", {
     method: "POST",
