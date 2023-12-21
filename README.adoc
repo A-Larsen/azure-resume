@@ -28,11 +28,13 @@ fetch("https://austinsresumefunction.azurewebsites.net/api/httpexample", {
 
 == Backend
 
+=== HttpResponseMessage
+
 The Backend is just an Azure Function that uses Azure Cosmos DB output bindings
 following the In-process model. The asynchronous function `HttpResponseMessage`
 has some important parameters
 
-=== `req` HttpResponseMessage parameter
+==== `req` HttpResponseMessage parameter
 
 [source, cs]
 ----
@@ -43,7 +45,7 @@ This parameter is used to respond to  a "get", or "post" requests. It uses
 anonymous authorization level meaning that no API key is required to invoke the
 function. `req` well contain
 
-=== `counter` HttpResponseMessage parameter
+==== `counter` HttpResponseMessage parameter
 
 [source, cs]
 ----
@@ -57,7 +59,7 @@ This parameter connected to cosmosdb using the database that has the name
 "my-database", collection named "my-container", Id of 1 and PartitionKey
 of 1. It will contain the output of this query in `counter`;
 
-=== `updateCounter` HttpResponseMessage parameter
+==== `updateCounter` HttpResponseMessage parameter
 
 [source, cs]
 ----
@@ -69,3 +71,12 @@ of 1. It will contain the output of this query in `counter`;
 
 This parameter also connects to cosmosdb using the specific values from the
 attribute but it is used to send data back to the database.
+
+==== Body
+
+The function bodies steps:
+
+1. Takes the `updateCounter` and sets it to `counter`
+2. Increments `updateCounter.Count` by one
+3. Serializes counter as a JSON string
+4. Returns the JSON string to update the cosmosdb
