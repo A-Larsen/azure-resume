@@ -39,8 +39,33 @@ has some important parameters
 [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
 ----
 
-This is used to respond to a webhook sent by a "get", or "post" requests. It
-uses anonymous authorization level meaning that no API key is required to
-invokie the function.
+This parameter is used to respond to  a "get", or "post" requests. It uses
+anonymous authorization level meaning that no API key is required to invoke the
+function. `req` well contain
 
 === `counter` HttpResponseMessage parameter
+
+[source, cs]
+----
+[CosmosDB(databaseName: "my-database", collectionName: "my-container", Id = "1",
+                        PartitionKey = "1", 
+                        ConnectionStringSetting = "CosmosDbConnectionString")]
+                        Counter counter,
+----
+
+This parameter connected to cosmosdb using the database that has the name
+"my-database", collection named "my-container", Id of 1 and PartitionKey
+of 1. It will contain the output of this query in `counter`;
+
+=== `updateCounter` HttpResponseMessage parameter
+
+[source, cs]
+----
+[CosmosDB(databaseName: "my-database", collectionName: "my-container",
+ Id = "1", PartitionKey = "1",
+ ConnectionStringSetting = "CosmosDbConnectionString"
+ )] out Counter updatedCounter,
+----
+
+This parameter also connects to cosmosdb using the specific values from the
+attribute but it is used to send data back to the database.
