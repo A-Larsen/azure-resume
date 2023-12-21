@@ -31,16 +31,36 @@ fetch("https://austinsresumefunction.azurewebsites.net/api/httpexample", {
 === Azure Portal
 
 ==== Static website
-Created a general purpose V2 storage account with hot access tier data. Hot
-access tier is chosen because the web content will need to be accessed
-frequently.
 
-clicked _capabilities_ under the storage resource overview, and then _Statis
-website_
+1. Created a general purpose V2 storage account with hot access tier data. Hot
+   access tier is chosen because the web content will need to be accessed
+   frequently.
+
+2. clicked _capabilities_ under the storage resource overview, and then _Static_
+    _website_
 
 image::./images/azure_portal_enable_static_website.png[enable static website 1]
 
 image::./images/azure_portal_enable_static_website_2.png[enable static website 2]
+
+
+3. Uploaded front end files to Azure from the static websites stroage resource
+   settings and made sure the content was uploaded to the `$web` container
+
+image::./images/azure_portal_static_website_upload_1.png[static website upload 1]
+
+image::./images/azure_portal_static_website_upload_2.png[static website upload 2]
+
+4. Enabled the static website switch, and set my index document name and error
+   documnet name.
+
+5. created and Azure _Function App_ resource and a _Azure Cosmos DB for NoSQL_
+   resource that's Capacity mode is serverless.
+
+6. Made sure That Azure Fuction apps _local.setting.json_ file in the Azure
+   portal Contained a connection string for the static websites storage account
+   and the cosmos DB storage account.
+
 
 === HttpResponseMessage
 
@@ -69,9 +89,10 @@ function. `req` well contain
                         Counter counter,
 ----
 
-This parameter connected to cosmosdb using the database that has the name
-"my-database", collection named "my-container", Id of 1 and PartitionKey
-of 1. It will contain the output of this query in `counter`;
+This parameter connected to cosmos DB using the database that has the name
+"my-database", collection named "my-container", Id of 1, PartitionKey of 1, and
+the connection string from the CosmosDbConnectionString property in
+_local.settings.json_. It will contain the output of this query in `counter`;
 
 ==== `updateCounter` HttpResponseMessage parameter
 
@@ -83,7 +104,7 @@ of 1. It will contain the output of this query in `counter`;
  )] out Counter updatedCounter,
 ----
 
-This parameter also connects to cosmosdb using the specific values from the
+This parameter also connects to cosmos DB using the specific values from the
 attribute but it is used to send data back to the database.
 
 ==== Body
@@ -93,4 +114,4 @@ The function bodies steps:
 1. Takes the `updateCounter` and sets it to `counter`
 2. Increments `updateCounter.Count` by one
 3. Serializes counter as a JSON string
-4. Returns the JSON string to update the cosmosdb
+4. Returns the JSON string to update the cosmos DB
