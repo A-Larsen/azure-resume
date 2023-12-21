@@ -26,11 +26,9 @@ fetch("https://austinsresumefunction.azurewebsites.net/api/httpexample", {
 })
 ----
 
-== Backend
-
 === Azure Portal
 
-==== Static website
+==== Uploading static website to Azure
 
 1. Created a general purpose V2 storage account with hot access tier data. Hot
    access tier is chosen because the web content will need to be accessed
@@ -61,6 +59,8 @@ image::./images/azure_portal_static_website_upload_2.png[static website upload 2
    portal Contained a connection string for the static websites storage account
    and the cosmos DB storage account.
 
+
+== Backend
 
 === HttpResponseMessage
 
@@ -115,3 +115,5 @@ The function bodies steps:
 2. Increments `updateCounter.Count` by one
 3. Serializes counter as a JSON string
 4. Returns the JSON string to update the cosmos DB
+
+== CI/CD
