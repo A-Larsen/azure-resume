@@ -28,6 +28,20 @@ fetch("https://austinsresumefunction.azurewebsites.net/api/httpexample", {
 
 == Backend
 
+=== Azure Portal
+
+==== Static website
+Created a general purpose V2 storage account with hot access tier data. Hot
+access tier is chosen because the web content will need to be accessed
+frequently.
+
+clicked _capabilities_ under the storage resource overview, and then _Statis
+website_
+
+image::./images/azure_portal_enable_static_website.png[enable static website 1]
+
+image::./images/azure_portal_enable_static_website_2.png[enable static website 2]
+
 === HttpResponseMessage
 
 The Backend is just an Azure Function that uses Azure Cosmos DB output bindings
