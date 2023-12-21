@@ -129,7 +129,7 @@ The function bodies steps:
 
 == Github actions
 
-Followed these articals to implement github actions for front and back end and
+Followed these articles to implement github actions for front and back end and
 change workflows to work with my project.
 
 - https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-github-actions?tabs=windows%2Cdotnet&pivots=method-manual[microsft github actions backend]
