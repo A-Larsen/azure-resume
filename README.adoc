@@ -39,9 +39,14 @@ fetch("https://austinsresumefunction.azurewebsites.net/api/httpexample", {
 
 image::./images/azure_portal_enable_static_website.png[enable static website 1]
 
+[start=3]
+3. Enabled the static website switch, and set my index document name and error
+   documnet name.
+
 image::./images/azure_portal_enable_static_website_2.png[enable static website 2]
 
 
+[start=4]
 3. Uploaded front end files to Azure from the static websites stroage resource
    settings and made sure the content was uploaded to the `$web` container
 
@@ -49,8 +54,7 @@ image::./images/azure_portal_static_website_upload_1.png[static website upload 1
 
 image::./images/azure_portal_static_website_upload_2.png[static website upload 2]
 
-4. Enabled the static website switch, and set my index document name and error
-   documnet name.
+[start=5]
 
 5. created and Azure _Function App_ resource and a _Azure Cosmos DB for NoSQL_
    resource that's Capacity mode is serverless.
