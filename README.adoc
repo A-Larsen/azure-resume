@@ -68,7 +68,8 @@ image::./images/azure_portal_static_website_upload_2.png[static website upload 2
    portal contained a connection string for the static websites storage account
    and the cosmos DB storage account.
 
-3. Changed the cors
+3. Changed the cors in my Azure function app to allow my primary enpoint to my
+   static site and my custom domain name
 
 === HttpResponseMessage
 
@@ -126,4 +127,21 @@ The function bodies steps:
 
 == CI/CD
 
+
 == DNS
+
+=== Setting up Custom Domain
+
+1. Bought a domain name for my website
+
+2. made CNAME record in the DNS management to map primary
+   endpoint
+
+3. Created a URL redirect to my custom domain
+
+=== Azure portal
+
+1. From my static websites storage resource settings I created an Azure CDN with
+   the origin host name as my static website's primary endponrt
+
+2. Set up the Custom Domain in the azure CDN to my custom domain
