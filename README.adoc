@@ -54,17 +54,21 @@ image::./images/azure_portal_static_website_upload_1.png[static website upload 1
 
 image::./images/azure_portal_static_website_upload_2.png[static website upload 2]
 
-[start=5]
 
-5. created and Azure _Function App_ resource and a _Azure Cosmos DB for NoSQL_
-   resource that's Capacity mode is serverless.
-
-6. Made sure That Azure Fuction apps _local.setting.json_ file in the Azure
-   portal contained a connection string for the static websites storage account
-   and the cosmos DB storage account.
 
 
 == Backend
+
+=== Azure Portal
+
+1. created and Azure _Function App_ resource and a _Azure Cosmos DB for NoSQL_
+   resource that's Capacity mode is serverless.
+
+2. Made sure That Azure Fuction apps _local.setting.json_ file in the Azure
+   portal contained a connection string for the static websites storage account
+   and the cosmos DB storage account.
+
+3. Changed the cors
 
 === HttpResponseMessage
 
