@@ -60,7 +60,7 @@ image::./images/azure_portal_static_website_upload_2.png[static website upload 2
    resource that's Capacity mode is serverless.
 
 6. Made sure That Azure Fuction apps _local.setting.json_ file in the Azure
-   portal Contained a connection string for the static websites storage account
+   portal contained a connection string for the static websites storage account
    and the cosmos DB storage account.
 
 
